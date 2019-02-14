@@ -8,7 +8,7 @@ do {
     } else {
         break;
     }
-    console.log(arrX);
+    // console.log(arrX);
 
 } while (true)
 var numMin

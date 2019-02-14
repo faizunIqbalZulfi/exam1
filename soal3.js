@@ -1,38 +1,38 @@
 var data = [{
-        nama: "Faizun",
+        nama: "faizun",
         umur: 9,
-        kelamin: "Pria",
-        job: "Pilot"
+        kelamin: "pria",
+        job: "pilot"
     },
     {
-        nama: "Iqbal",
+        nama: "iqbal",
         umur: 10,
-        kelamin: "Wanita",
-        job: "Ceo"
+        kelamin: "wanita",
+        job: "ceo"
     },
     {
-        nama: "Zulfi",
+        nama: "zulfi",
         umur: 5,
-        kelamin: "Wanita",
-        job: "Polisi"
+        kelamin: "wanita",
+        job: "polisi"
     },
     {
-        nama: "Faiz",
+        nama: "faiz",
         umur: 14,
-        kelamin: "Pria",
-        job: "Pns"
+        kelamin: "pria",
+        job: "pns"
     },
     {
-        nama: "Bal",
+        nama: "bal",
         umur: 20,
-        kelamin: "Pria",
-        job: "Dev"
+        kelamin: "pria",
+        job: "dev"
     },
     {
-        nama: "Zul",
+        nama: "zul",
         umur: 8,
-        kelamin: "Pria",
-        job: "Dev"
+        kelamin: "pria",
+        job: "dev"
     },
 ]
 
@@ -75,12 +75,12 @@ var fnMapJob = () => {
     document.getElementById("job").innerHTML = z.join("")
 }
 
-var fnSubmit = () => {
+var fnSubmit = (fnShow) => {
     var input = {
         nama: document.getElementById("inputNama").value,
         umur: document.getElementById("inputUmur").value,
         kelamin: document.querySelector("input[name=inputSex]:checked").value,
-        job: document.getElementById("inputJob").value,
+        job: document.getElementById("inputJob").value.toLowerCase(),
     }
     data[data.length] = input;
 
@@ -134,11 +134,11 @@ var fnSearchByUmur = () => {
 
 var fnSearchByJob = () => {
     var tr = document.getElementById("myTable").getElementsByTagName("tr")
-    var input = document.getElementById("job").value.toLowerCase();
+    var input = document.getElementById("job").value;
     for (let i = 0; i < tr.length; i++) {
         var td = tr[i].getElementsByTagName("td")[3];
         if (td) {
-            if (td.innerText.toLowerCase().includes(input) || input == "All") {
+            if (td.innerText.includes(input) || input == "All") {
                 tr[i].style.display = ""
             } else {
                 tr[i].style.display = "none"
