@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table, th, tr, td{
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 10px;
+      
+    }
+    .td1{
+      border-style: hidden hidden hidden solid
+    }
+    
+    .fs1{
+      border: solid 1px black;  
+      display:block;
+      /* margin-right: 850px */
+      
+    }
+    .fs2{
+      border: solid 1px black;  
+      display:block;
+    }
+    .fs3{
+      border: solid 1px black;  
+      display:block;
+    }
+
+    
+  </style>
+    <script defer src="soal3.js"></script>
+</head>
+
+<body>
+    <div>
+        <fieldset class="fs1">
+            <legend>Filter</legend>
+            <form>
+                <p>Nama:
+                    <input onkeydown="fnSearchByName()" onkeyup="fnSearchByName()" type="text" id="filterNama"></p>
+
+                <p>Umur:
+                    <input onkeyup="fnSearchByUmur()" type="number" id="filterUmurMin"> -
+                    <input onkeyup="fnSearchByUmur()" type="number" id="filterUmurMax"></p>
+                <p>Pekerjaan:
+                    <select name="job" id="job">
+
+                    </select></p>
+                <p>
+                    <input onclick="fnSearchByJob()" type="button" value="Search Job">
+                </p>
+                <p>
+                    <input type="radio" name="filterSex" value="Pria" id="filterPria">
+                    <label for="filterPria">Pria</label>
+                    <input type="radio" name="filterSex" value="Wanita" id="filterWanita">
+                    <label for="filterWanita">Perempuan</label>
+                </p>
+                <p>
+                    <input onclick="fnSearchByGender()" type="button" value="Filter Gender">
+                </p>
+
+            </form>
+            <!-- <button onclick="fnSearchByJob()">Search Job</button> -->
+
+
+        </fieldset>
+
+    </div>
+    <div>
+        <fieldset class="fs1">
+            <legend>Sorting</legend>
+            <form>
+                <input onclick="fnSortNama()" id="sortNama" type="button" value="Sort Nama">
+                <input onclick="fnSortUmur()" id="sortUmur" type="button" value="Sort Umur">
+                <input onclick="fnSortKelamin()" id="sortKelamin" type="button" value="Sort Kelamin">
+                <input onclick="fnSortJob()" id="sortPekerjaan" type="button" value="Sort Pekerjaan">
+
+            </form>
+        </fieldset>
+
+    </div>
+
+    <div>
+        <fieldset class="fs2">
+            <legend>Input Data</legend>
+            <p>
+                <table>
+                    <th>
+                        <!-- Nama:  -->
+                        <input type="text" id="inputNama">
+                    </th>
+                    <th>
+                        <!-- Umur:  -->
+                        <input type="number" id="inputUmur">
+                    </th>
+                    <th>
+                        <!-- Pekerjaan:  -->
+                        <input type="text" id="inputJob">
+                    </th>
+                    <th>
+                        <!-- kelamin:  -->
+                        <input type="radio" name="inputSex" value="Pria" id="inputPria">
+                        <label for="inputPria">Pria</label>
+                        <input type="radio" name="inputSex" value="Wanita" id="inputWanita">
+                        <label for="inputWanita">Perempuan</label>
+                    </th>
+                </table>
+            </p>
+            <button onclick="fnSubmit()">submit</button>
+
+        </fieldset>
+
+    </div>
+
+    <div>
+        <fieldset class="fs3">
+            <legend>Tabel Data</legend>
+            <table id="myTable">
+                <thead>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Kelamin</th>
+                    <th>Pekerjaan</th>
+                </thead>
+                <tbody id="inputData">
+
+
+                </tbody>
+            </table>
+
+        </fieldset>
+
+        </dic>
+
+
+
+</body>
+
+</html>
